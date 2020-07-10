@@ -1,5 +1,7 @@
 var express = require("express");
 var app = express();
+var path = require('path')
+app.use(express.static(path.join(__dirname, 'public')));
 var port = 3000;
 
 var bodyParser = require('body-parser');
@@ -7,14 +9,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 var mongoose = require("mongoose");
+const { Binary } = require("mongodb");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/comunev1");
+mongoose.connect("mongodb://localhost:27017/comunev1",{useNewUrlParser: true});
 var nameSchema = new mongoose.Schema({
     name: String,
     email: String,
     education: String,
     position: String,
-    file: Buffer,
+    file: Object,
     phone: Number
 });
 var User = mongoose.model("User", nameSchema);

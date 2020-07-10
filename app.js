@@ -18,7 +18,8 @@ var nameSchema = new mongoose.Schema({
     education: String,
     position: String,
     file: Object,
-    phone: Number
+    phone: Number,
+    url: String
 });
 var User = mongoose.model("User", nameSchema);
 app.post("/hiring", (req, res) =>{

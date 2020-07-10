@@ -24,7 +24,7 @@ var User = mongoose.model("User", nameSchema);
 app.post("/hiring", (req, res) =>{
     var myData = new User(req.body);
     myData.save().then(item =>{
-        res.sendFile(__dirname + "/signup_success.html");
+        res.sendFile(__dirname + "/success.html");
     })
     .catch(err => {
         res.status(400).send("Unable to save to Mongo");

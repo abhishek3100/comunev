@@ -6,7 +6,7 @@ This is my beigning to learn Backend. Task is to create a simple hiring page whe
 <h3>Prerequisite</h3>
 
 Considering we've already installed MongoDb, Node in our system. If not use :
-For node : sudo apt-get install nodejs <br>
+<br>For node : sudo apt-get install nodejs <br>
 For MongoDb: sudo apt install -y mongodb <br>
 
 <p>We're using some commands under our project</p>
